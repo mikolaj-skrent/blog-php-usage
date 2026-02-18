@@ -1,5 +1,5 @@
 <?php
-session_start()
+session_start()  // zaczyna sesję
 ?>
 
 
@@ -33,10 +33,10 @@ session_start()
             <p>Nie masz konta? <a href="#" id="showRegister">Zarejestruj się</a></p>
 
 <?php
-if(isset($_SESSION["msg"])) {
-    echo $_SESSION["msg"];
-    unset ($_SESSION["msg"]);
-}
+if(isset($_SESSION["msg"])) { // sprawdza czy $_SESSION["msg"] istnieje, a potem zwraca true lub false / 1 lub 0
+    echo $_SESSION["msg"]; // zwraca wiadomość
+    unset ($_SESSION["msg"]); 
+} 
 
 ?>
 
@@ -94,3 +94,4 @@ if(isset($_SESSION["msg"])) {
     <script src="./assets/script.js"></script>
   </body>
 </html>
+

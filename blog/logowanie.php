@@ -9,12 +9,13 @@ $sql = ("SELECT * FROM users WHERE login='$username' AND password='$password'");
 
 $result = mysqli_query($condom, $sql); // sprawdza czy użytkownik z takimi danymi istnieje istnieje
 
-if(mysqli_num_rows($result)) { // if sprawdza czy wpisane dane logowania są poprawne
-$_SESSION["msg"] = "Podane nieprawidłowe dane. <br> Nie przejdziesz dalej!";
-header("Location: /index.php/");
+if (mysqli_num_rows($result)) { // if sprawdza czy wpisane dane logowania są poprawne
+    header("Location: /blog/s_blog-article.html"); // header("Location ...   - przekierowuje spowrotem na daną stronę (w tym przypadku na s_blog-article.html)
 } else {
-    header("Location: s_blog-article.html"); // header("Location ...   - przekierowuje spowrotem na daną stronę (w tym przypadku na s_blog-article.html)
+    $_SESSION["msg"] = "Podane nieprawidłowe dane. <br> Nie przejdziesz dalej!";
+    header("Location: /blog/");
 }
+
 
 
 
@@ -24,3 +25,4 @@ header("Location: /index.php/");
  
 
 ?>
+

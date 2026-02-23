@@ -9,21 +9,18 @@
 </head>
 
 <body>
-  <header>
+<header>
     <h1><a href="/">B.L.O.gg</a></h1>
     <span>
       <?php
       session_start();
-      if (isset($_SESSION["user"])) {
-        echo "Witaj, " . $_SESSION["user"] . "!";
-      } else {
-        echo "Nie jesteś zalogowany.";
-        header("Location: index.php");
-        exit();
+      
+      if (isset($_SESSION["login"])) {
+        echo "Witaj, " . $_SESSION["login"] . "!";
       }
       ?>
     </span>
-  </header>
+</header>
   <main>
     <article>
       <h2>Tytuł artykułu 1</h2>

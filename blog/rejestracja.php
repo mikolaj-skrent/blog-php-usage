@@ -30,7 +30,7 @@ if (mysqli_num_rows($checkResult) > 0) {
 }
 
 $sql = "INSERT INTO `users` (`id`, `login`, `password`, `nickname`)
-  VALUES (NULL, '$username', '$password', '$rePass')";
+  VALUES (NULL, '$username', '$password', '$username".time()."')"; // deklaracja polecenia sql, które wstawia dane do bazy danych
 
 if ($password == $rePass) { // sprawdza czy string w password i rePass są takie same, jeżeli tak przepuszcza dalej i rejestruje użytkownika w bazie danych - w innym przypadku zwraca komunikat błędu użytkownika
     $_SESSION["msg"] = "Udało się zarejestrować!";
